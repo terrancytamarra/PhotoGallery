@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col col-lg-12">
+      <form>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-lg" id="searchTitle"  placeholder="Search by Title" #box (keyup)="onKeyUp(box.value)">
+          </div>
+        </form>
+  </div>
+   
+</div>
+<div class="row" *ngIf="photos">
+  <div class="col col-lg-4" *ngFor="let photo of photos">
+    <div class="row">
+        {{photo.title}}
+    </div>
+    <div class="row">
+        <div class="col col-lg-2" ><img [src]="photo.thumbnailUrl" alt="">
+        </div>
+    </div>
+    
+   
+  </div>
+  
+</div>
+<br>
+<div class="row">
+  <div class="col col-lg-5"></div>
+    <div class="col col-lg-2">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#" (click)="onPrevious()">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onPagination(1)">1</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onPagination(2)">2</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onPagination(3)">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onPagination(4)">4</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onPagination(5)">5</a></li>
+              <li class="page-item"><a class="page-link" href="#" (click)="onNext()">Next</a></li>
+            </ul>
+          </nav>
+      </div>
+    <div class="col col-lg-5"></div>
+</div>
